@@ -37,6 +37,10 @@
             this.职员信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.菜品信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看记录IToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.订单记录toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.菜品记录toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.辅助工具TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日历ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -73,10 +77,6 @@
             this.消费查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.结账ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lvDesk = new System.Windows.Forms.ListView();
-            this.查看记录IToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -143,6 +143,35 @@
             this.菜品信息ToolStripMenuItem1.Text = "菜品信息";
             this.菜品信息ToolStripMenuItem1.Click += new System.EventHandler(this.菜品信息ToolStripMenuItem1_Click);
             // 
+            // 查看记录IToolStripMenuItem
+            // 
+            this.查看记录IToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.订单记录toolStripMenuItem1,
+            this.toolStripSeparator6,
+            this.菜品记录toolStripMenuItem2});
+            this.查看记录IToolStripMenuItem.Name = "查看记录IToolStripMenuItem";
+            this.查看记录IToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.查看记录IToolStripMenuItem.Text = "查看记录";
+            // 
+            // 订单记录toolStripMenuItem1
+            // 
+            this.订单记录toolStripMenuItem1.Name = "订单记录toolStripMenuItem1";
+            this.订单记录toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.订单记录toolStripMenuItem1.Text = "订单记录";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator6.Tag = "";
+            // 
+            // 菜品记录toolStripMenuItem2
+            // 
+            this.菜品记录toolStripMenuItem2.Name = "菜品记录toolStripMenuItem2";
+            this.菜品记录toolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.菜品记录toolStripMenuItem2.Text = "菜品记录";
+            this.菜品记录toolStripMenuItem2.Click += new System.EventHandler(this.菜品记录toolStripMenuItem2_Click);
+            // 
             // 辅助工具TToolStripMenuItem
             // 
             this.辅助工具TToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -158,31 +187,31 @@
             // 日历ToolStripMenuItem1
             // 
             this.日历ToolStripMenuItem1.Name = "日历ToolStripMenuItem1";
-            this.日历ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.日历ToolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
             this.日历ToolStripMenuItem1.Text = "日历";
             this.日历ToolStripMenuItem1.Click += new System.EventHandler(this.日历ToolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(120, 6);
             // 
             // 记事本ToolStripMenuItem1
             // 
             this.记事本ToolStripMenuItem1.Name = "记事本ToolStripMenuItem1";
-            this.记事本ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.记事本ToolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
             this.记事本ToolStripMenuItem1.Text = "记事本";
             this.记事本ToolStripMenuItem1.Click += new System.EventHandler(this.记事本ToolStripMenuItem1_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(120, 6);
             // 
             // 计算器ToolStripMenuItem1
             // 
             this.计算器ToolStripMenuItem1.Name = "计算器ToolStripMenuItem1";
-            this.计算器ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.计算器ToolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
             this.计算器ToolStripMenuItem1.Text = "计算器";
             this.计算器ToolStripMenuItem1.Click += new System.EventHandler(this.计算器ToolStripMuneItem1_Click);
             // 
@@ -415,34 +444,6 @@
             this.lvDesk.UseCompatibleStateImageBehavior = false;
             this.lvDesk.Click += new System.EventHandler(this.lvDesk_Click);
             // 
-            // 查看记录IToolStripMenuItem
-            // 
-            this.查看记录IToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripSeparator6,
-            this.toolStripMenuItem2});
-            this.查看记录IToolStripMenuItem.Name = "查看记录IToolStripMenuItem";
-            this.查看记录IToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.查看记录IToolStripMenuItem.Text = "查看记录";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
-            this.toolStripMenuItem1.Text = "订单记录";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
-            this.toolStripSeparator6.Tag = "";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
-            this.toolStripMenuItem2.Text = "菜品记录";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -517,8 +518,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem 菜品信息ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 查看记录IToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 订单记录toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 菜品记录toolStripMenuItem2;
     }
 }

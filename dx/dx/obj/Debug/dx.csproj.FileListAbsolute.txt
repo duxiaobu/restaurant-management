@@ -18,13 +18,12 @@ E:\chuanhaozi\dx\dx\obj\Debug\dx.pdb
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmJZ.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmDesk.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmMain.resources
-E:\chuanhaozi\dx\dx\obj\Debug\dx.frmBF.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmCalender.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmDetails.resources
-E:\chuanhaozi\dx\dx\obj\Debug\dx.frmHF.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmLock.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmUser.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmPwd.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmQxGl.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmSerch.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmCpInfo.resources
+E:\chuanhaozi\dx\dx\obj\Debug\dx.frmOrder.resources
