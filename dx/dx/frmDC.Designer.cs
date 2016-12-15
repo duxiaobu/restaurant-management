@@ -57,8 +57,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,7 +83,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNum);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(224, 12);
+            this.groupBox1.Location = new System.Drawing.Point(416, 30);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -148,6 +148,8 @@
             this.txtpnum.Size = new System.Drawing.Size(100, 25);
             this.txtpnum.TabIndex = 26;
             this.txtpnum.Text = "1";
+            this.txtpnum.TextChanged += new System.EventHandler(this.txtpnum_TextChanged);
+            this.txtpnum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpnum_KeyPress);
             // 
             // label5
             // 
@@ -217,11 +219,11 @@
             this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnSave);
-            this.groupBox2.Location = new System.Drawing.Point(224, 169);
+            this.groupBox2.Location = new System.Drawing.Point(416, 189);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(503, 59);
+            this.groupBox2.Size = new System.Drawing.Size(493, 59);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             // 
@@ -262,11 +264,11 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.dgvFoods);
-            this.groupBox3.Location = new System.Drawing.Point(224, 234);
+            this.groupBox3.Location = new System.Drawing.Point(294, 239);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(500, 277);
+            this.groupBox3.Size = new System.Drawing.Size(727, 277);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             // 
@@ -281,8 +283,8 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column6});
             this.dgvFoods.Location = new System.Drawing.Point(9, 24);
             this.dgvFoods.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFoods.Name = "dgvFoods";
@@ -290,7 +292,7 @@
             this.dgvFoods.RowHeadersVisible = false;
             this.dgvFoods.RowTemplate.Height = 27;
             this.dgvFoods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFoods.Size = new System.Drawing.Size(483, 240);
+            this.dgvFoods.Size = new System.Drawing.Size(710, 240);
             this.dgvFoods.TabIndex = 20;
             // 
             // groupBox4
@@ -300,7 +302,7 @@
             this.groupBox4.Controls.Add(this.tvFood);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 499);
+            this.groupBox4.Size = new System.Drawing.Size(272, 499);
             this.groupBox4.TabIndex = 33;
             this.groupBox4.TabStop = false;
             // 
@@ -315,9 +317,10 @@
             // 
             // tvFood
             // 
+            this.tvFood.Font = new System.Drawing.Font("宋体", 12F);
             this.tvFood.Location = new System.Drawing.Point(6, 18);
             this.tvFood.Name = "tvFood";
-            this.tvFood.Size = new System.Drawing.Size(175, 480);
+            this.tvFood.Size = new System.Drawing.Size(260, 480);
             this.tvFood.TabIndex = 2;
             this.tvFood.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
@@ -334,6 +337,7 @@
             this.Column2.HeaderText = "数量";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
             // 
             // Column3
             // 
@@ -341,6 +345,7 @@
             this.Column3.HeaderText = "总价";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 50;
             // 
             // Column4
             // 
@@ -348,6 +353,7 @@
             this.Column4.HeaderText = "服务员";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
@@ -355,6 +361,15 @@
             this.Column5.HeaderText = "桌台";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 50;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "datatime";
+            this.Column7.HeaderText = "日期";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 150;
             // 
             // Column6
             // 
@@ -363,19 +378,12 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "datatime";
-            this.Column7.HeaderText = "日期";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
             // frmDC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::dx.Properties.Resources.bg_03;
-            this.ClientSize = new System.Drawing.Size(736, 523);
+            this.ClientSize = new System.Drawing.Size(1034, 530);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -429,8 +437,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 
     }
 }

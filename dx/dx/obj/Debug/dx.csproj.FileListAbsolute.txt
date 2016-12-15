@@ -27,3 +27,4 @@ E:\chuanhaozi\dx\dx\obj\Debug\dx.frmUser.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmPwd.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmQxGl.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmSerch.resources
+E:\chuanhaozi\dx\dx\obj\Debug\dx.frmCpInfo.resources

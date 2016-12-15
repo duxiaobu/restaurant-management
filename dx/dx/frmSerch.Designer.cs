@@ -79,42 +79,49 @@
             this.Column1.DataPropertyName = "foodname";
             this.Column1.HeaderText = "菜名";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "foodsum";
             this.Column2.HeaderText = "数量";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "foodallprice";
             this.Column3.HeaderText = "总价";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "waitername";
             this.Column4.HeaderText = "服务员";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "zhuotai";
             this.Column5.HeaderText = "桌台";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "beizhu";
             this.Column6.HeaderText = "备注";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "datatime";
             this.Column7.HeaderText = "日期";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // frmSerch
             // 
@@ -131,6 +138,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "消费查询";
+            this.Load += new System.EventHandler(this.frmSerch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

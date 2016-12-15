@@ -23,7 +23,27 @@ namespace dx
         public string bjf;
         private void frmJZ_Load(object sender, EventArgs e)
         {
-
+            this.Text = Rname + "结账";
+            groupBox1.Text = "当前桌台-" + Rname;
+            MySqlConnection conn = BaseClass.DBConn.DxCon();
+            MySqlDataAdapter sda = new MySqlDataAdapter("select foodname,foodsum,foodallprice,waitername,beizhu,zhuotai,datatime from tb_guestfood where zhuotai='" + Rname + "'order by ID desc", conn);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            dgvRecord.DataSource = ds.Tables[0];
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("select sum(foodallprice) from tb_GuestFood where zhuotai='" + Rname + "'", conn);
+            price = Convert.ToString(cmd.ExecuteScalar());
+            if (price == "")
+            {
+                txtallprice.Text = "0";
+                btnJZ.Enabled = false;
+            }
+            else
+            {
+                txtallprice.Text = price;
+                btnJZ.Enabled = true;
+                conn.Close();
+            }
         }
         private void txtmoney_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -37,26 +57,27 @@ namespace dx
         {
             if (price == "")                                   //判断金额为空
             {
-                lbl0.Text = "0";
+                txtallprice.Text = "0";
             }
             else
             {
                 if (txtmoney.Text == "")
                 {
-                    txtmoney.Text = "0";
-                    lbl0.Text = "0";
+                    
+                    txtzl.Text = "0";
+                    btnJZ.Enabled = false;
                 }
                 else
                 { 
                     //如果都有值，计算出应该支付给顾客的余额
-                    lbl0.Text=Convert.ToDecimal(Convert.ToDouble(txtmoney.Text.Trim())-Convert.ToDouble(price)*Convert.ToDouble(0.95)-Convert.ToDouble(bjf)).ToString("C");
+                    txtzl.Text=Convert.ToString(Convert.ToDouble(txtmoney.Text.Trim())-Convert.ToDouble(price)*Convert.ToDouble(txtzk.Text.Trim()));
 
                 }
             }
         }
         private void btnJZ_Click(object sender, EventArgs e)
         {
-            if (txtmoney.Text == "" || lbl0.Text == "0")
+            if (txtmoney.Text == "" || txtallprice.Text == "0")
             {
                 MessageBox.Show("请先结账");
                 return;
@@ -74,7 +95,7 @@ namespace dx
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("delete from tb_guestfood where zhuotai='" + Rname +"'",conn);
                     cmd.ExecuteNonQuery();
-                    cmd = new MySqlCommand("update tb_room set RoomZT='待用'，Num=0,Waitername='' where RoomName='" + Rname + "'",conn);
+                    cmd = new MySqlCommand("update tb_room set RoomZT='待用',Num=0,WaiterName='' where RoomName='" + Rname + "'",conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     this.Close();
@@ -85,6 +106,28 @@ namespace dx
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtzk_TextChanged(object sender, EventArgs e)
+        {
+            if (price == "")
+            {
+                MessageBox.Show("请输入消费总价");
+            }
+            else
+            {
+                if (txtmoney.Text == "")
+                {
+                    MessageBox.Show("请输入收银");
+                }
+                else
+                {
+                    if (txtzk.Text != "" && txtzk.Text != "0")
+                    {
+                        txtzl.Text = Convert.ToString(Convert.ToDouble(txtmoney.Text.Trim()) - Convert.ToDouble(price) * Convert.ToDouble(txtzk.Text.Trim()));
+                    }
+                }
+            }
         }
     }
 }

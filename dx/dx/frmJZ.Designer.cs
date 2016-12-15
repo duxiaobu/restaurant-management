@@ -30,13 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnJZ = new System.Windows.Forms.Button();
@@ -44,6 +37,18 @@
             this.lbl0 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblprice = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtzl = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtzk = new System.Windows.Forms.TextBox();
+            this.txtallprice = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -54,7 +59,7 @@
             this.groupBox1.Controls.Add(this.dgvRecord);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 408);
+            this.groupBox1.Size = new System.Drawing.Size(558, 551);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -69,80 +74,43 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dgvRecord.Location = new System.Drawing.Point(6, 18);
+            this.Column7,
+            this.Column6});
+            this.dgvRecord.Location = new System.Drawing.Point(5, 25);
             this.dgvRecord.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRecord.Name = "dgvRecord";
             this.dgvRecord.ReadOnly = true;
             this.dgvRecord.RowHeadersVisible = false;
             this.dgvRecord.RowTemplate.Height = 27;
             this.dgvRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecord.Size = new System.Drawing.Size(449, 384);
+            this.dgvRecord.Size = new System.Drawing.Size(546, 519);
             this.dgvRecord.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "foodname";
-            this.Column1.HeaderText = "菜名";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "foodsum";
-            this.Column2.HeaderText = "数量";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "foodallprice";
-            this.Column3.HeaderText = "总价";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "waitername";
-            this.Column4.HeaderText = "服务员";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "zhuotai";
-            this.Column5.HeaderText = "桌台";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "beizhu";
-            this.Column6.HeaderText = "备注";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "datatime";
-            this.Column7.HeaderText = "日期";
-            this.Column7.Name = "Column7";
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.txtallprice);
+            this.groupBox2.Controls.Add(this.txtzk);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtzl);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.btnJZ);
             this.groupBox2.Controls.Add(this.txtmoney);
             this.groupBox2.Controls.Add(this.lbl0);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblprice);
-            this.groupBox2.Location = new System.Drawing.Point(504, 13);
+            this.groupBox2.Location = new System.Drawing.Point(578, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(296, 408);
+            this.groupBox2.Size = new System.Drawing.Size(382, 551);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(180, 273);
+            this.btnExit.Location = new System.Drawing.Point(257, 445);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 29);
@@ -153,7 +121,7 @@
             // 
             // btnJZ
             // 
-            this.btnJZ.Location = new System.Drawing.Point(57, 274);
+            this.btnJZ.Location = new System.Drawing.Point(78, 445);
             this.btnJZ.Margin = new System.Windows.Forms.Padding(4);
             this.btnJZ.Name = "btnJZ";
             this.btnJZ.Size = new System.Drawing.Size(100, 29);
@@ -164,7 +132,7 @@
             // 
             // txtmoney
             // 
-            this.txtmoney.Location = new System.Drawing.Point(107, 97);
+            this.txtmoney.Location = new System.Drawing.Point(163, 231);
             this.txtmoney.Name = "txtmoney";
             this.txtmoney.Size = new System.Drawing.Size(156, 25);
             this.txtmoney.TabIndex = 3;
@@ -174,39 +142,141 @@
             // lbl0
             // 
             this.lbl0.AutoSize = true;
-            this.lbl0.Location = new System.Drawing.Point(55, 163);
+            this.lbl0.Font = new System.Drawing.Font("宋体", 12F);
+            this.lbl0.Location = new System.Drawing.Point(99, 325);
             this.lbl0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(52, 15);
+            this.lbl0.Size = new System.Drawing.Size(69, 20);
             this.lbl0.TabIndex = 2;
             this.lbl0.Text = "找零：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 109);
+            this.label2.Font = new System.Drawing.Font("宋体", 12F);
+            this.label2.Location = new System.Drawing.Point(97, 236);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "收银：";
             // 
             // lblprice
             // 
             this.lblprice.AutoSize = true;
-            this.lblprice.Location = new System.Drawing.Point(44, 51);
+            this.lblprice.Font = new System.Drawing.Font("宋体", 12F);
+            this.lblprice.Location = new System.Drawing.Point(84, 57);
             this.lblprice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblprice.Name = "lblprice";
-            this.lblprice.Size = new System.Drawing.Size(67, 15);
+            this.lblprice.Size = new System.Drawing.Size(89, 20);
             this.lblprice.TabIndex = 0;
             this.lblprice.Text = "总消费：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(-47, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "折扣：";
+            // 
+            // txtzl
+            // 
+            this.txtzl.Enabled = false;
+            this.txtzl.Location = new System.Drawing.Point(163, 320);
+            this.txtzl.Name = "txtzl";
+            this.txtzl.Size = new System.Drawing.Size(156, 25);
+            this.txtzl.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F);
+            this.label3.Location = new System.Drawing.Point(97, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "折扣：";
+            // 
+            // txtzk
+            // 
+            this.txtzk.Location = new System.Drawing.Point(163, 144);
+            this.txtzk.Name = "txtzk";
+            this.txtzk.Size = new System.Drawing.Size(156, 25);
+            this.txtzk.TabIndex = 11;
+            this.txtzk.Text = "1";
+            this.txtzk.TextChanged += new System.EventHandler(this.txtzk_TextChanged);
+            // 
+            // txtallprice
+            // 
+            this.txtallprice.Enabled = false;
+            this.txtallprice.Location = new System.Drawing.Point(163, 58);
+            this.txtallprice.Name = "txtallprice";
+            this.txtallprice.Size = new System.Drawing.Size(156, 25);
+            this.txtallprice.TabIndex = 12;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "foodname";
+            this.Column1.HeaderText = "菜名";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "foodsum";
+            this.Column2.HeaderText = "数量";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "foodallprice";
+            this.Column3.HeaderText = "总价";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 50;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "waitername";
+            this.Column4.HeaderText = "服务员";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "zhuotai";
+            this.Column5.HeaderText = "桌台";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 50;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "datatime";
+            this.Column7.HeaderText = "日期";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "beizhu";
+            this.Column6.HeaderText = "备注";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // frmJZ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::dx.Properties.Resources.bg_03;
-            this.ClientSize = new System.Drawing.Size(812, 433);
+            this.ClientSize = new System.Drawing.Size(973, 577);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -215,7 +285,7 @@
             this.Name = "frmJZ";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmJZ";
+            this.Text = "结账";
             this.Load += new System.EventHandler(this.frmJZ_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).EndInit();
@@ -229,13 +299,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvRecord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnJZ;
@@ -243,5 +306,17 @@
         private System.Windows.Forms.Label lbl0;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblprice;
+        private System.Windows.Forms.TextBox txtzl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtallprice;
+        private System.Windows.Forms.TextBox txtzk;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

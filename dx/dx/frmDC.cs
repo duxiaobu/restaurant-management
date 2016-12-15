@@ -22,25 +22,42 @@ namespace dx
         private void frmDC_Load(object sender, EventArgs e)
         {
             this.Text = RName + "点/加菜";                      //设置窗体显示问题
-            TreeNode newnode1 = tvFood.Nodes.Add("火锅");       //为控件添加节点
-            TreeNode newnode2 = tvFood.Nodes.Add("汤锅");
+            TreeNode newnode1 = tvFood.Nodes.Add("羊肉汤锅");       //为控件添加节点
+            TreeNode newnode2 = tvFood.Nodes.Add("老火锅");
+            TreeNode newnode11 = newnode1.Nodes.Add("汤锅类");
+            TreeNode newnode12 = newnode1.Nodes.Add("爆炒类");
+            TreeNode newnode13 = newnode1.Nodes.Add("素菜类");
+            TreeNode newnode14 = newnode1.Nodes.Add("小吃类");
+            TreeNode newnode21 = newnode2.Nodes.Add("特色系列");
+            TreeNode newnode22 = newnode2.Nodes.Add("荤菜系列");
+            TreeNode newnode23 = newnode2.Nodes.Add("素菜系列");
+            TreeNode newnode24 = newnode2.Nodes.Add("特色小吃");
+            TreeNode newnode25 = newnode2.Nodes.Add("锅底");
             MySqlConnection conn = BaseClass.DBConn.DxCon();    //连接数据库
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("select * from tb_type where footy='1'",conn);
+            MySqlCommand cmd = new MySqlCommand("select * from tb_food where foodty='汤锅类'",conn);
             MySqlDataReader msdr = cmd.ExecuteReader();
             while (msdr.Read())
             {
-                newnode1.Nodes.Add(msdr[2].ToString().Trim());   //为锅底添加子节点
+                newnode11.Nodes.Add(msdr[3].ToString().Trim());   
             }
             msdr.Close();
-
-            cmd = new MySqlCommand("select * from tb_type where foodty='2'",conn);
+           
+            cmd = new MySqlCommand("select * from tb_food where foodty='爆炒类'",conn);
             msdr = cmd.ExecuteReader();
             while (msdr.Read())
             {
-                newnode2.Nodes.Add(msdr[2].ToString().Trim());    //为配菜添加子节点
+                newnode12.Nodes.Add(msdr[3].ToString().Trim());    
             }
             msdr.Close();
+            cmd = new MySqlCommand("select * from tb_food where foodty='素菜类'",conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode13.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+            cmd = new MySqlCommand("select * from tb_food where foodty=小吃类''",conn);
 
             cmd = new MySqlCommand("select * from tb_waiter",conn);
             msdr = cmd.ExecuteReader();
@@ -67,13 +84,13 @@ namespace dx
         private void treeView1_DoubleClick(object sender, EventArgs e)   //双击某个菜系将会显示该菜系的详细信息
         {
             string foodname = tvFood.SelectedNode.Text;               //获取选择的商品名称
-            if (foodname == "锅底" || foodname == "配菜" || foodname == "烟酒" || foodname == "主食")
+            if (foodname == "火锅" || foodname == "汤锅" || foodname == "汤锅类" || foodname == "爆炒类" || foodname == "素菜类" || foodname == "小吃类" || foodname == "特色系列" || foodname == "荤菜系列" || foodname == "素菜系列" || foodname == "特色小吃" || foodname == "锅底")
             { }
             else
             {
                 MySqlConnection conn = BaseClass.DBConn.DxCon();
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tb_food where foodname='" + foodname + "'",conn);
+                MySqlCommand cmd = new MySqlCommand("select * from tb_food where foodname='" + foodname + "'", conn);
                 MySqlDataReader msdr = cmd.ExecuteReader();
                 msdr.Read();
                 txtNum.Text = msdr["foodnum"].ToString().Trim();         //读取商品的编号
@@ -89,7 +106,7 @@ namespace dx
                 else
                 {
                     //根据消费商品的数量计算出消费商品的价格，txtbox中只能传string类型，但计算必须转换成整型
-                    txtallprice.Text = Convert.ToString(Convert.ToInt32(txtprice.Text) * Convert.ToInt32(txtpnum.Text));  
+                    txtallprice.Text = Convert.ToString(Convert.ToInt32(txtprice.Text) * Convert.ToInt32(txtpnum.Text));
                 }
             }
         }
@@ -104,30 +121,17 @@ namespace dx
         }
         private void txtpnum_TextChanged(object sender, EventArgs e)
         {
-            if (txtpnum.Text == "")
+            if (txtpnum.Text != "")
+            //根据数量计算出消费商品的价格
             {
-                MessageBox.Show("数量不能为空！");
-                return;
-            }
-            else
-            {
-                if (Convert.ToInt32(txtpnum.Text) < 1)
-                {
-                    MessageBox.Show("不能为小于1的数字");
-                    return;
-                }
-                else
-                { 
-                    //根据数量计算出消费商品的价格
-                    txtallprice.Text = Convert.ToString(Convert.ToInt32(txtpnum.Text)*Convert.ToInt32(txtprice.Text));
-                }
+                txtallprice.Text = Convert.ToString(Convert.ToInt32(txtpnum.Text) * Convert.ToInt32(txtprice.Text));
             }
         }
         private void GetData()         //该方法用于显示所有点菜信息
         {
             MySqlConnection conn = BaseClass.DBConn.DxCon();
             conn.Open();                                         //mysqldataadapter数据适配器，为处理脱机处理数据而设计的，在内部还是调用mysqldatareader
-            MySqlDataAdapter msdr = new MySqlDataAdapter("select foodnum,foodallprice,waitername,beizhu,zhuotai,datatime from tb_guestfood where zhuotai='" + RName + "'order by ID desc",conn );
+            MySqlDataAdapter msdr = new MySqlDataAdapter("select foodname,foodsum,foodallprice,waitername,beizhu,zhuotai,datatime from tb_guestfood where zhuotai='" + RName + "'order by ID desc",conn );
             DataSet ds = new DataSet();                //创建DataSet对象
             msdr.Fill(ds);                //调用fill方法会将查询结果保存进DataSet中，调用完后会自动关闭数据库，DataSset会创建一个新表DataTable,其包含查询所有的字段，其名称默认为Table,
             dgvFoods.DataSource = ds.Tables[0];   //将数据绑定到sgvFoods上，并完成显示

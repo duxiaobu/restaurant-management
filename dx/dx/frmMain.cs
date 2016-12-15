@@ -101,11 +101,7 @@ namespace dx
             frmQxGl qx = new frmQxGl();
             qx.ShowDialog();
         }
-        private void 系统备份ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmBF bf = new frmBF();
-            bf.ShowDialog();
-        }
+
         private void 口令设置ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmPwd pwd = new frmPwd();
@@ -238,6 +234,12 @@ namespace dx
         private void lvDesk_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void 菜品信息ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCpInfo cp = new frmCpInfo();
+            cp.ShowDialog();
         }
     }
 }

@@ -69,17 +69,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBF.Designer.cs">
-      <DependentUpon>frmBF.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCalender.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCalender.Designer.cs">
       <DependentUpon>frmCalender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCpInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCpInfo.Designer.cs">
+      <DependentUpon>frmCpInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDC.cs">
       <SubType>Form</SubType>
@@ -98,12 +98,6 @@
     </Compile>
     <Compile Include="frmDetails.Designer.cs">
       <DependentUpon>frmDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHF.Designer.cs">
-      <DependentUpon>frmHF.cs</DependentUpon>
     </Compile>
     <Compile Include="frmJZ.cs">
       <SubType>Form</SubType>
@@ -164,11 +158,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBF.resx">
-      <DependentUpon>frmBF.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCalender.resx">
       <DependentUpon>frmCalender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCpInfo.resx">
+      <DependentUpon>frmCpInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDC.resx">
       <DependentUpon>frmDC.cs</DependentUpon>
@@ -178,9 +172,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetails.resx">
       <DependentUpon>frmDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHF.resx">
-      <DependentUpon>frmHF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmJZ.resx">
       <DependentUpon>frmJZ.cs</DependentUpon>
