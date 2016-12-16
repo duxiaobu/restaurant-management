@@ -84,7 +84,7 @@ namespace dx
             }
             else
             {
-                if (lbl0.Text.Substring(1, 1) == "-")                  //判断支付的金额是否大于消费金额
+                if (txtzl.Text.Substring(0, 1) == "-")                  //判断支付的金额是否大于消费金额
                 {
                     MessageBox.Show("金额不足");
                     return;
@@ -93,7 +93,26 @@ namespace dx
                 {
                     MySqlConnection conn = BaseClass.DBConn.DxCon();
                     conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("delete from tb_guestfood where zhuotai='" + Rname +"'",conn);
+                    MySqlCommand cmd = new MySqlCommand("select count(*) from tb_cpinfo where foodname='" + dgvRecord.SelectedCells[0].Value.ToString() + "'",conn);
+                    int i = Convert.ToInt32(cmd.ExecuteScalar());
+                    if(i>0)
+                    {
+                        cmd=new MySqlCommand("select foodname,foodnum from tb_cpinfo where foodname='" + dgvRecord.SelectedCells[0].Value.ToString() + "'",conn);
+                        MySqlDataReader msdr=cmd.ExecuteReader();
+                        msdr.Read();
+                        string name = msdr["foodname"].ToString().Trim();
+                        int beforenumber = Convert.ToInt32(msdr["foodnum"].ToString().Trim());
+                        string afternumber = Convert.ToString(beforenumber + Convert.ToInt32(dgvRecord.SelectedCells[1].Value.ToString()));
+                        msdr.Close();
+                        cmd = new MySqlCommand("update tb_cpinfo set foodnum='" + afternumber + "' where foodname='" + name + "'", conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        cmd = new MySqlCommand("insert into tb_cpinfo(foodname,foodnum) values('" + dgvRecord.SelectedCells[0].Value.ToString() + "','" + dgvRecord.SelectedCells[1].Value.ToString() + "')", conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    cmd = new MySqlCommand("delete from tb_guestfood where zhuotai='" + Rname +"'",conn);
                     cmd.ExecuteNonQuery();
                     cmd = new MySqlCommand("update tb_room set RoomZT='待用',Num=0,WaiterName='' where RoomName='" + Rname + "'",conn);
                     cmd.ExecuteNonQuery();
