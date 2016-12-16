@@ -87,6 +87,12 @@
     <Compile Include="frmDC.Designer.cs">
       <DependentUpon>frmDC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXFJL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXFJL.Designer.cs">
+      <DependentUpon>frmXFJL.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDesk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +135,11 @@
     <Compile Include="frmOpen.Designer.cs">
       <DependentUpon>frmOpen.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOrder.cs">
+    <Compile Include="frmCPJL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrder.Designer.cs">
-      <DependentUpon>frmOrder.cs</DependentUpon>
+    <Compile Include="frmCPJL.Designer.cs">
+      <DependentUpon>frmCPJL.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPwd.cs">
       <SubType>Form</SubType>
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="frmDC.resx">
       <DependentUpon>frmDC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmXFJL.resx">
+      <DependentUpon>frmXFJL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDesk.resx">
       <DependentUpon>frmDesk.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,8 +203,8 @@
     <EmbeddedResource Include="frmOpen.resx">
       <DependentUpon>frmOpen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrder.resx">
-      <DependentUpon>frmOrder.cs</DependentUpon>
+    <EmbeddedResource Include="frmCPJL.resx">
+      <DependentUpon>frmCPJL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPwd.resx">
       <DependentUpon>frmPwd.cs</DependentUpon>

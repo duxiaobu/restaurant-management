@@ -20,7 +20,7 @@ namespace dx
         }
         public string Rname;
         public string price;
-        public string bjf;
+        public string guestName;
         private void frmJZ_Load(object sender, EventArgs e)
         {
             this.Text = Rname + "结账";
@@ -114,12 +114,21 @@ namespace dx
                     }
                     cmd = new MySqlCommand("delete from tb_guestfood where zhuotai='" + Rname +"'",conn);
                     cmd.ExecuteNonQuery();
-                    cmd = new MySqlCommand("update tb_room set RoomZT='待用',Num=0,WaiterName='' where RoomName='" + Rname + "'",conn);
+                    string allPrice = Convert.ToString(Convert.ToDouble(price) * Convert.ToDouble(txtzk.Text.Trim()));
+                    cmd = new MySqlCommand("select GuestName from tb_room where RoomName='" + Rname + "'",conn);
+                    MySqlDataReader msdr1 = cmd.ExecuteReader();
+                    msdr1.Read();
+                    guestName = msdr1[7].ToString().Trim();
+                    msdr1.Close();
+                    cmd = new MySqlCommand("insert into tb_moneyinfo(guestname,datatime,money) values('" + guestName +"','" + DateTime.Now.ToString() + "','" + allPrice + "')",conn);
+                    cmd.ExecuteNonQuery();
+                    cmd = new MySqlCommand("update tb_room set RoomZT='待用',Num=0,WaiterName=''，RoomBZ='',GuestName='',WaiterName='' where RoomName='" + Rname + "'",conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     this.Close();
                 }
             }
+           
         }
 
         private void btnExit_Click(object sender, EventArgs e)

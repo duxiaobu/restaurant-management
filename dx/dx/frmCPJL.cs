@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace dx
 {
-    public partial class frmOrder : Form
+    public partial class frmCPJL : Form
     {
-        public frmOrder()
+        public frmCPJL()
         {
             InitializeComponent();
         }

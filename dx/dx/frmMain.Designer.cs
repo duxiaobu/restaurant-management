@@ -38,7 +38,7 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.菜品信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.查看记录IToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.订单记录toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.消费记录toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.菜品记录toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.辅助工具TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,49 +115,49 @@
             // 桌台信息ToolStripMenuItem1
             // 
             this.桌台信息ToolStripMenuItem1.Name = "桌台信息ToolStripMenuItem1";
-            this.桌台信息ToolStripMenuItem1.Size = new System.Drawing.Size(138, 24);
+            this.桌台信息ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.桌台信息ToolStripMenuItem1.Text = "桌台信息";
             this.桌台信息ToolStripMenuItem1.Click += new System.EventHandler(this.桌台信息ToolStripMenuIteml_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // 职员信息ToolStripMenuItem1
             // 
             this.职员信息ToolStripMenuItem1.Name = "职员信息ToolStripMenuItem1";
-            this.职员信息ToolStripMenuItem1.Size = new System.Drawing.Size(138, 24);
+            this.职员信息ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.职员信息ToolStripMenuItem1.Text = "职员信息";
             this.职员信息ToolStripMenuItem1.Click += new System.EventHandler(this.职员信息ToolStripMenuItem1_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(135, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(149, 6);
             // 
             // 菜品信息ToolStripMenuItem1
             // 
             this.菜品信息ToolStripMenuItem1.Name = "菜品信息ToolStripMenuItem1";
-            this.菜品信息ToolStripMenuItem1.Size = new System.Drawing.Size(138, 24);
+            this.菜品信息ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.菜品信息ToolStripMenuItem1.Text = "菜品信息";
             this.菜品信息ToolStripMenuItem1.Click += new System.EventHandler(this.菜品信息ToolStripMenuItem1_Click);
             // 
             // 查看记录IToolStripMenuItem
             // 
             this.查看记录IToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.订单记录toolStripMenuItem1,
+            this.消费记录toolStripMenuItem1,
             this.toolStripSeparator6,
             this.菜品记录toolStripMenuItem2});
             this.查看记录IToolStripMenuItem.Name = "查看记录IToolStripMenuItem";
             this.查看记录IToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.查看记录IToolStripMenuItem.Text = "查看记录";
             // 
-            // 订单记录toolStripMenuItem1
+            // 消费记录toolStripMenuItem1
             // 
-            this.订单记录toolStripMenuItem1.Name = "订单记录toolStripMenuItem1";
-            this.订单记录toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
-            this.订单记录toolStripMenuItem1.Text = "订单记录";
+            this.消费记录toolStripMenuItem1.Name = "消费记录toolStripMenuItem1";
+            this.消费记录toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.消费记录toolStripMenuItem1.Text = "消费记录";
             // 
             // toolStripSeparator6
             // 
@@ -187,31 +187,31 @@
             // 日历ToolStripMenuItem1
             // 
             this.日历ToolStripMenuItem1.Name = "日历ToolStripMenuItem1";
-            this.日历ToolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
+            this.日历ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.日历ToolStripMenuItem1.Text = "日历";
             this.日历ToolStripMenuItem1.Click += new System.EventHandler(this.日历ToolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // 记事本ToolStripMenuItem1
             // 
             this.记事本ToolStripMenuItem1.Name = "记事本ToolStripMenuItem1";
-            this.记事本ToolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
+            this.记事本ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.记事本ToolStripMenuItem1.Text = "记事本";
             this.记事本ToolStripMenuItem1.Click += new System.EventHandler(this.记事本ToolStripMenuItem1_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
             // 
             // 计算器ToolStripMenuItem1
             // 
             this.计算器ToolStripMenuItem1.Name = "计算器ToolStripMenuItem1";
-            this.计算器ToolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
+            this.计算器ToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.计算器ToolStripMenuItem1.Text = "计算器";
             this.计算器ToolStripMenuItem1.Click += new System.EventHandler(this.计算器ToolStripMuneItem1_Click);
             // 
@@ -436,7 +436,7 @@
             this.lvDesk.HideSelection = false;
             this.lvDesk.LargeImageList = this.imageList1;
             this.lvDesk.Location = new System.Drawing.Point(0, 30);
-            this.lvDesk.Margin = new System.Windows.Forms.Padding(4);
+            this.lvDesk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvDesk.MultiSelect = false;
             this.lvDesk.Name = "lvDesk";
             this.lvDesk.Size = new System.Drawing.Size(971, 576);
@@ -518,7 +518,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem 菜品信息ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 查看记录IToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 订单记录toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 消费记录toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem 菜品记录toolStripMenuItem2;
     }

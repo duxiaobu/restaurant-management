@@ -244,7 +244,7 @@ namespace dx
 
         private void 菜品记录toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmOrder order = new frmOrder();
+            frmCPJL order = new frmCPJL();
             order.ShowDialog();
         }
     }
