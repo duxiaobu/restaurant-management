@@ -354,6 +354,7 @@
             this.Column4.HeaderText = "性别";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 30;
             // 
             // Column5
             // 
@@ -361,6 +362,7 @@
             this.Column5.HeaderText = "年龄";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 30;
             // 
             // Column6
             // 

@@ -46,6 +46,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "转为表格";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -82,7 +83,7 @@
             this.Column3.DataPropertyName = "money";
             this.Column3.HeaderText = "消费金额";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 70;
+            this.Column3.Width = 90;
             // 
             // frmXFJL
             // 

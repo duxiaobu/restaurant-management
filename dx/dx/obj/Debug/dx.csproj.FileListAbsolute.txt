@@ -28,3 +28,5 @@ E:\chuanhaozi\dx\dx\obj\Debug\dx.frmSerch.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmCpInfo.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmXFJL.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmCPJL.resources
+E:\chuanhaozi\dx\dx\obj\Debug\Interop.Office.dll
+E:\chuanhaozi\dx\dx\obj\Debug\dx.csproj.ResolveComReference.cache

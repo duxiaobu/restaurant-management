@@ -49,9 +49,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvFoods = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tvFood = new System.Windows.Forms.TreeView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +56,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tvFood = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -275,6 +275,8 @@
             // dgvFoods
             // 
             this.dgvFoods.AllowUserToAddRows = false;
+            this.dgvFoods.AllowUserToResizeColumns = false;
+            this.dgvFoods.AllowUserToResizeRows = false;
             this.dgvFoods.BackgroundColor = System.Drawing.Color.White;
             this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -294,35 +296,6 @@
             this.dgvFoods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFoods.Size = new System.Drawing.Size(710, 240);
             this.dgvFoods.TabIndex = 20;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.tvFood);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(272, 499);
-            this.groupBox4.TabIndex = 33;
-            this.groupBox4.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "菜品类别";
-            // 
-            // tvFood
-            // 
-            this.tvFood.Font = new System.Drawing.Font("宋体", 12F);
-            this.tvFood.Location = new System.Drawing.Point(6, 18);
-            this.tvFood.Name = "tvFood";
-            this.tvFood.Size = new System.Drawing.Size(260, 480);
-            this.tvFood.TabIndex = 2;
-            this.tvFood.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
             // Column1
             // 
@@ -377,6 +350,35 @@
             this.Column6.HeaderText = "备注";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.tvFood);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(272, 499);
+            this.groupBox4.TabIndex = 33;
+            this.groupBox4.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "菜品类别";
+            // 
+            // tvFood
+            // 
+            this.tvFood.Font = new System.Drawing.Font("宋体", 12F);
+            this.tvFood.Location = new System.Drawing.Point(6, 18);
+            this.tvFood.Name = "tvFood";
+            this.tvFood.Size = new System.Drawing.Size(260, 480);
+            this.tvFood.TabIndex = 2;
+            this.tvFood.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
             // frmDC
             // 
