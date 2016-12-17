@@ -247,5 +247,11 @@ namespace dx
             frmCPJL order = new frmCPJL();
             order.ShowDialog();
         }
+
+        private void 消费记录toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmXFJL xf = new frmXFJL();
+            xf.ShowDialog();
+        }
     }
 }

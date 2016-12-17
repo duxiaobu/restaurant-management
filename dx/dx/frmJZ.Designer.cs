@@ -31,17 +31,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvRecord = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtallprice = new System.Windows.Forms.TextBox();
+            this.txtzk = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtzl = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnJZ = new System.Windows.Forms.Button();
             this.txtmoney = new System.Windows.Forms.TextBox();
             this.lbl0 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblprice = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtzl = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtzk = new System.Windows.Forms.TextBox();
-            this.txtallprice = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             this.groupBox1.Controls.Add(this.dgvRecord);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(558, 551);
+            this.groupBox1.Size = new System.Drawing.Size(685, 575);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -83,7 +83,7 @@
             this.dgvRecord.RowHeadersVisible = false;
             this.dgvRecord.RowTemplate.Height = 27;
             this.dgvRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecord.Size = new System.Drawing.Size(546, 519);
+            this.dgvRecord.Size = new System.Drawing.Size(673, 543);
             this.dgvRecord.TabIndex = 0;
             // 
             // groupBox2
@@ -100,77 +100,48 @@
             this.groupBox2.Controls.Add(this.lbl0);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblprice);
-            this.groupBox2.Location = new System.Drawing.Point(578, 13);
+            this.groupBox2.Location = new System.Drawing.Point(705, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(382, 551);
+            this.groupBox2.Size = new System.Drawing.Size(336, 575);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // btnExit
+            // txtallprice
             // 
-            this.btnExit.Location = new System.Drawing.Point(257, 445);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 29);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "退出";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.txtallprice.Enabled = false;
+            this.txtallprice.Location = new System.Drawing.Point(119, 59);
+            this.txtallprice.Name = "txtallprice";
+            this.txtallprice.Size = new System.Drawing.Size(156, 25);
+            this.txtallprice.TabIndex = 12;
             // 
-            // btnJZ
+            // txtzk
             // 
-            this.btnJZ.Location = new System.Drawing.Point(78, 445);
-            this.btnJZ.Margin = new System.Windows.Forms.Padding(4);
-            this.btnJZ.Name = "btnJZ";
-            this.btnJZ.Size = new System.Drawing.Size(100, 29);
-            this.btnJZ.TabIndex = 4;
-            this.btnJZ.Text = "结账";
-            this.btnJZ.UseVisualStyleBackColor = true;
-            this.btnJZ.Click += new System.EventHandler(this.btnJZ_Click);
+            this.txtzk.Location = new System.Drawing.Point(119, 145);
+            this.txtzk.Name = "txtzk";
+            this.txtzk.Size = new System.Drawing.Size(156, 25);
+            this.txtzk.TabIndex = 11;
+            this.txtzk.Text = "1";
+            this.txtzk.TextChanged += new System.EventHandler(this.txtzk_TextChanged);
             // 
-            // txtmoney
+            // label3
             // 
-            this.txtmoney.Location = new System.Drawing.Point(163, 231);
-            this.txtmoney.Name = "txtmoney";
-            this.txtmoney.Size = new System.Drawing.Size(156, 25);
-            this.txtmoney.TabIndex = 3;
-            this.txtmoney.TextChanged += new System.EventHandler(this.txtmoney_TextChanged);
-            this.txtmoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmoney_KeyPress);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F);
+            this.label3.Location = new System.Drawing.Point(53, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "折扣：";
             // 
-            // lbl0
+            // txtzl
             // 
-            this.lbl0.AutoSize = true;
-            this.lbl0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lbl0.Location = new System.Drawing.Point(99, 325);
-            this.lbl0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(69, 20);
-            this.lbl0.TabIndex = 2;
-            this.lbl0.Text = "找零：";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(97, 236);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "收银：";
-            // 
-            // lblprice
-            // 
-            this.lblprice.AutoSize = true;
-            this.lblprice.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblprice.Location = new System.Drawing.Point(84, 57);
-            this.lblprice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblprice.Name = "lblprice";
-            this.lblprice.Size = new System.Drawing.Size(89, 20);
-            this.lblprice.TabIndex = 0;
-            this.lblprice.Text = "总消费：";
+            this.txtzl.Enabled = false;
+            this.txtzl.Location = new System.Drawing.Point(119, 321);
+            this.txtzl.Name = "txtzl";
+            this.txtzl.Size = new System.Drawing.Size(156, 25);
+            this.txtzl.TabIndex = 9;
             // 
             // label1
             // 
@@ -181,40 +152,69 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "折扣：";
             // 
-            // txtzl
+            // btnExit
             // 
-            this.txtzl.Enabled = false;
-            this.txtzl.Location = new System.Drawing.Point(163, 320);
-            this.txtzl.Name = "txtzl";
-            this.txtzl.Size = new System.Drawing.Size(156, 25);
-            this.txtzl.TabIndex = 9;
+            this.btnExit.Location = new System.Drawing.Point(213, 446);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(100, 29);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "退出";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label3
+            // btnJZ
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 12F);
-            this.label3.Location = new System.Drawing.Point(97, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "折扣：";
+            this.btnJZ.Location = new System.Drawing.Point(34, 446);
+            this.btnJZ.Margin = new System.Windows.Forms.Padding(4);
+            this.btnJZ.Name = "btnJZ";
+            this.btnJZ.Size = new System.Drawing.Size(100, 29);
+            this.btnJZ.TabIndex = 4;
+            this.btnJZ.Text = "结账";
+            this.btnJZ.UseVisualStyleBackColor = true;
+            this.btnJZ.Click += new System.EventHandler(this.btnJZ_Click);
             // 
-            // txtzk
+            // txtmoney
             // 
-            this.txtzk.Location = new System.Drawing.Point(163, 144);
-            this.txtzk.Name = "txtzk";
-            this.txtzk.Size = new System.Drawing.Size(156, 25);
-            this.txtzk.TabIndex = 11;
-            this.txtzk.Text = "1";
-            this.txtzk.TextChanged += new System.EventHandler(this.txtzk_TextChanged);
+            this.txtmoney.Location = new System.Drawing.Point(119, 232);
+            this.txtmoney.Name = "txtmoney";
+            this.txtmoney.Size = new System.Drawing.Size(156, 25);
+            this.txtmoney.TabIndex = 3;
+            this.txtmoney.TextChanged += new System.EventHandler(this.txtmoney_TextChanged);
+            this.txtmoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmoney_KeyPress);
             // 
-            // txtallprice
+            // lbl0
             // 
-            this.txtallprice.Enabled = false;
-            this.txtallprice.Location = new System.Drawing.Point(163, 58);
-            this.txtallprice.Name = "txtallprice";
-            this.txtallprice.Size = new System.Drawing.Size(156, 25);
-            this.txtallprice.TabIndex = 12;
+            this.lbl0.AutoSize = true;
+            this.lbl0.Font = new System.Drawing.Font("宋体", 12F);
+            this.lbl0.Location = new System.Drawing.Point(55, 326);
+            this.lbl0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(69, 20);
+            this.lbl0.TabIndex = 2;
+            this.lbl0.Text = "找零：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 12F);
+            this.label2.Location = new System.Drawing.Point(53, 237);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "收银：";
+            // 
+            // lblprice
+            // 
+            this.lblprice.AutoSize = true;
+            this.lblprice.Font = new System.Drawing.Font("宋体", 12F);
+            this.lblprice.Location = new System.Drawing.Point(40, 58);
+            this.lblprice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblprice.Name = "lblprice";
+            this.lblprice.Size = new System.Drawing.Size(89, 20);
+            this.lblprice.TabIndex = 0;
+            this.lblprice.Text = "总消费：";
             // 
             // Column1
             // 
@@ -230,7 +230,7 @@
             this.Column2.HeaderText = "数量";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 50;
+            this.Column2.Width = 30;
             // 
             // Column3
             // 
@@ -238,7 +238,7 @@
             this.Column3.HeaderText = "总价";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 50;
+            this.Column3.Width = 40;
             // 
             // Column4
             // 
@@ -246,7 +246,7 @@
             this.Column4.HeaderText = "服务员";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 80;
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
@@ -262,7 +262,7 @@
             this.Column7.HeaderText = "日期";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 150;
+            this.Column7.Width = 140;
             // 
             // Column6
             // 
@@ -276,7 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::dx.Properties.Resources.bg_03;
-            this.ClientSize = new System.Drawing.Size(973, 577);
+            this.ClientSize = new System.Drawing.Size(1054, 601);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

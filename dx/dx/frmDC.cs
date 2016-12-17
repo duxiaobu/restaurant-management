@@ -59,7 +59,7 @@ namespace dx
             msdr.Close();
             cmd = new MySqlCommand("select * from tb_food where foodty=小吃类''",conn);
 
-            cmd = new MySqlCommand("select * from tb_waiter",conn);
+            cmd = new MySqlCommand("select WaiterName from tb_room where RoomName='" + RName + "'",conn);
             msdr = cmd.ExecuteReader();
             while (msdr.Read())
             {

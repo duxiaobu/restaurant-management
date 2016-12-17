@@ -93,44 +93,49 @@ namespace dx
                 {
                     MySqlConnection conn = BaseClass.DBConn.DxCon();
                     conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("select count(*) from tb_cpinfo where foodname='" + dgvRecord.SelectedCells[0].Value.ToString() + "'",conn);
-                    int i = Convert.ToInt32(cmd.ExecuteScalar());
-                    if(i>0)
+                    for (int i = 0; i < dgvRecord.Rows.Count; i++)
                     {
-                        cmd=new MySqlCommand("select foodname,foodnum from tb_cpinfo where foodname='" + dgvRecord.SelectedCells[0].Value.ToString() + "'",conn);
-                        MySqlDataReader msdr=cmd.ExecuteReader();
-                        msdr.Read();
-                        string name = msdr["foodname"].ToString().Trim();
-                        int beforenumber = Convert.ToInt32(msdr["foodnum"].ToString().Trim());
-                        string afternumber = Convert.ToString(beforenumber + Convert.ToInt32(dgvRecord.SelectedCells[1].Value.ToString()));
-                        msdr.Close();
-                        cmd = new MySqlCommand("update tb_cpinfo set foodnum='" + afternumber + "' where foodname='" + name + "'", conn);
-                        cmd.ExecuteNonQuery();
+                        
+                        MySqlCommand cmd = new MySqlCommand("select count(*) from tb_cpinfo where foodname='" + dgvRecord.Rows[i].Cells[0].Value.ToString() + "'", conn);
+                        int j = Convert.ToInt32(cmd.ExecuteScalar());
+                        if (j > 0)
+                        {
+                            cmd = new MySqlCommand("select foodname,foodnum from tb_cpinfo where foodname='" + dgvRecord.Rows[i].Cells[0].Value.ToString () + "'", conn);
+                            MySqlDataReader msdr = cmd.ExecuteReader();
+                            msdr.Read();
+                            string name = msdr["foodname"].ToString().Trim();
+                            int beforenumber = Convert.ToInt32(msdr["foodnum"].ToString().Trim());
+                            string afternumber = Convert.ToString(beforenumber + Convert.ToInt32(dgvRecord.Rows[i].Cells[1].Value.ToString()));
+                            msdr.Close();
+                            cmd = new MySqlCommand("update tb_cpinfo set foodnum='" + afternumber + "' where foodname='" + name + "'", conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            cmd = new MySqlCommand("insert into tb_cpinfo(foodname,foodnum) values('" + dgvRecord.Rows[i].Cells[0].Value.ToString() + "','" + dgvRecord.Rows[i].Cells[1].Value.ToString() + "')", conn);
+                            cmd.ExecuteNonQuery();
+                        }
                     }
-                    else
-                    {
-                        cmd = new MySqlCommand("insert into tb_cpinfo(foodname,foodnum) values('" + dgvRecord.SelectedCells[0].Value.ToString() + "','" + dgvRecord.SelectedCells[1].Value.ToString() + "')", conn);
-                        cmd.ExecuteNonQuery();
-                    }
-                    cmd = new MySqlCommand("delete from tb_guestfood where zhuotai='" + Rname +"'",conn);
-                    cmd.ExecuteNonQuery();
+                    MySqlCommand cmd1;
+                    cmd1 = new MySqlCommand("delete from tb_guestfood where zhuotai='" + Rname +"'",conn);
+                    cmd1.ExecuteNonQuery();
                     string allPrice = Convert.ToString(Convert.ToDouble(price) * Convert.ToDouble(txtzk.Text.Trim()));
-                    cmd = new MySqlCommand("select GuestName from tb_room where RoomName='" + Rname + "'",conn);
-                    MySqlDataReader msdr1 = cmd.ExecuteReader();
+                    cmd1 = new MySqlCommand("select GuestName from tb_room where RoomName='" + Rname + "'",conn);
+                    MySqlDataReader msdr1 = cmd1.ExecuteReader();
                     msdr1.Read();
-                    guestName = msdr1[7].ToString().Trim();
+                    guestName = msdr1["GuestName"].ToString().Trim();
                     msdr1.Close();
-                    cmd = new MySqlCommand("insert into tb_moneyinfo(guestname,datatime,money) values('" + guestName +"','" + DateTime.Now.ToString() + "','" + allPrice + "')",conn);
-                    cmd.ExecuteNonQuery();
-                    cmd = new MySqlCommand("update tb_room set RoomZT='待用',Num=0,WaiterName=''，RoomBZ='',GuestName='',WaiterName='' where RoomName='" + Rname + "'",conn);
-                    cmd.ExecuteNonQuery();
+                    cmd1 = new MySqlCommand("insert into tb_moneyinfo(guestname,datatime,money) values('" + guestName +"','" + DateTime.Now.ToString() + "','" + allPrice + "')",conn);
+                    cmd1.ExecuteNonQuery();
+                    cmd1 = new MySqlCommand("update tb_room set RoomZT='待用',Num=0,WaiterName='',RoomBZ='',GuestName='',WaiterName='' where RoomName='" + Rname + "'",conn);
+                    cmd1.ExecuteNonQuery();
                     conn.Close();
                     this.Close();
                 }
             }
            
         }
-
+        
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -18,13 +18,14 @@ namespace dx
         {
             InitializeComponent();
         }
-        public string guestname;
-        public string allprice;
         private void frmXFJL_Load(object sender, EventArgs e)
         {
             MySqlConnection conn = BaseClass.DBConn.DxCon();
             conn.Open();
-
+            MySqlDataAdapter msda = new MySqlDataAdapter("select guestname,datatime,money from tb_moneyinfo",conn);
+            DataSet ds = new DataSet();
+            msda.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
         }
     }
 }

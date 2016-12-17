@@ -66,21 +66,23 @@
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "GuestName";
+            this.Column1.DataPropertyName = "guestname";
             this.Column1.HeaderText = "顾客";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "ZhangdanData";
+            this.Column2.DataPropertyName = "datatime";
             this.Column2.HeaderText = "日期";
             this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "AllPrice";
+            this.Column3.DataPropertyName = "money";
             this.Column3.HeaderText = "消费金额";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 70;
             // 
             // frmXFJL
             // 
