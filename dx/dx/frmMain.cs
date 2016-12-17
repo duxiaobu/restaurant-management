@@ -68,8 +68,16 @@ namespace dx
             }
             else                                    //否则添加索引为0的图
             {
+                if(rzt=="待用")
+                {
                 lvDesk.LargeImageList = imageList1;
                 lvDesk.Items.Add(msdr["RoomName"].ToString(), 0);
+                }
+                else
+                {
+                    lvDesk.LargeImageList = imageList1;
+                    lvDesk.Items.Add(msdr["RoomName"].ToString(),2);
+                }
             }
         }
 
@@ -136,18 +144,35 @@ namespace dx
             if (zt == "使用")
             {
                 this.contextMenuStrip1.Items[0].Enabled = false;
-                this.contextMenuStrip1.Items[1].Enabled = true;
-                this.contextMenuStrip1.Items[3].Enabled = true;
-                this.contextMenuStrip1.Items[5].Enabled = true;
+                this.contextMenuStrip1.Items[2].Enabled = false;
+                this.contextMenuStrip1.Items[4].Enabled = false;
                 this.contextMenuStrip1.Items[6].Enabled = true;
+                this.contextMenuStrip1.Items[8].Enabled = true;
+                this.contextMenuStrip1.Items[10].Enabled = true;
+                this.contextMenuStrip1.Items[11].Enabled = false;
             }
-            if (zt == "待用")
+            else
             {
-                this.contextMenuStrip1.Items[0].Enabled = true;
-                this.contextMenuStrip1.Items[1].Enabled = false;
-                this.contextMenuStrip1.Items[3].Enabled = false;
-                this.contextMenuStrip1.Items[5].Enabled = false;
-                this.contextMenuStrip1.Items[6].Enabled = false;
+                if (zt == "待用")
+                {
+                    this.contextMenuStrip1.Items[0].Enabled = true;
+                    this.contextMenuStrip1.Items[2].Enabled = true;
+                    this.contextMenuStrip1.Items[4].Enabled = false;
+                    this.contextMenuStrip1.Items[6].Enabled = false;
+                    this.contextMenuStrip1.Items[8].Enabled = false;
+                    this.contextMenuStrip1.Items[10].Enabled = false;
+                    this.contextMenuStrip1.Items[11].Enabled = false;
+                }
+                else
+                {
+                    this.contextMenuStrip1.Items[0].Enabled = false;
+                    this.contextMenuStrip1.Items[2].Enabled = true;
+                    this.contextMenuStrip1.Items[4].Enabled = false;
+                    this.contextMenuStrip1.Items[6].Enabled = false;
+                    this.contextMenuStrip1.Items[8].Enabled = false;
+                    this.contextMenuStrip1.Items[10].Enabled = false;
+                    this.contextMenuStrip1.Items[11].Enabled = true;
+                }
             }
             conn.Close();
         }
@@ -252,6 +277,42 @@ namespace dx
         {
             frmXFJL xf = new frmXFJL();
             xf.ShowDialog();
+        }
+
+        private void 预定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvDesk.SelectedItems.Count != 0)               //判断是否有选中项
+            {
+                string names = lvDesk.SelectedItems[0].SubItems[0].Text;
+                MySqlConnection conn = BaseClass.DBConn.DxCon();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("update tb_room set RoomZT='预定' where RoomName='" + names + "'", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                frmMain_Activated(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("请选择桌台");
+            }
+        }
+
+        private void 取消预订ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvDesk.SelectedItems.Count != 0)               //判断是否有选中项
+            {
+                string names = lvDesk.SelectedItems[0].SubItems[0].Text;
+                MySqlConnection conn = BaseClass.DBConn.DxCon();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("update tb_room set RoomZT='待用' where RoomName='" + names + "'", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                frmMain_Activated(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("请选择桌台");
+            }
         }
     }
 }

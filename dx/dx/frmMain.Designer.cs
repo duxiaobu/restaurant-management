@@ -76,6 +76,11 @@
             this.消费查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.结账ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lvDesk = new System.Windows.Forms.ListView();
+            this.预定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.取消预订ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -359,65 +364,71 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "a_1.jpg");
             this.imageList1.Images.SetKeyName(1, "a_2.jpg");
+            this.imageList1.Images.SetKeyName(2, "3.jpg");
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.预定ToolStripMenuItem,
+            this.toolStripSeparator7,
             this.开台ToolStripMenuItem,
+            this.toolStripSeparator10,
             this.取消开台toolStripMenuItem,
             this.toolStripSeparator3,
             this.点菜ToolStripMenuItem,
             this.toolStripSeparator4,
             this.消费查询ToolStripMenuItem,
-            this.结账ToolStripMenuItem});
+            this.toolStripSeparator11,
+            this.结账ToolStripMenuItem,
+            this.取消预订ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.contextMenuStrip1.ShowImageMargin = false;
             this.contextMenuStrip1.ShowItemToolTips = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(114, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 224);
             // 
             // 开台ToolStripMenuItem
             // 
             this.开台ToolStripMenuItem.Name = "开台ToolStripMenuItem";
-            this.开台ToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.开台ToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.开台ToolStripMenuItem.Text = "开台";
             this.开台ToolStripMenuItem.Click += new System.EventHandler(this.开台ToolStripMenuItem_Click);
             // 
             // 取消开台toolStripMenuItem
             // 
             this.取消开台toolStripMenuItem.Name = "取消开台toolStripMenuItem";
-            this.取消开台toolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.取消开台toolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.取消开台toolStripMenuItem.Text = "取消开台";
             this.取消开台toolStripMenuItem.Click += new System.EventHandler(this.取消开台toolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(110, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(124, 6);
             // 
             // 点菜ToolStripMenuItem
             // 
             this.点菜ToolStripMenuItem.Name = "点菜ToolStripMenuItem";
-            this.点菜ToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.点菜ToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.点菜ToolStripMenuItem.Text = "点菜";
             this.点菜ToolStripMenuItem.Click += new System.EventHandler(this.点菜ToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(110, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(124, 6);
             // 
             // 消费查询ToolStripMenuItem
             // 
             this.消费查询ToolStripMenuItem.Name = "消费查询ToolStripMenuItem";
-            this.消费查询ToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.消费查询ToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.消费查询ToolStripMenuItem.Text = "消费查询";
             this.消费查询ToolStripMenuItem.Click += new System.EventHandler(this.消费查询ToolStripMenuItem_Click);
             // 
             // 结账ToolStripMenuItem
             // 
             this.结账ToolStripMenuItem.Name = "结账ToolStripMenuItem";
-            this.结账ToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.结账ToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.结账ToolStripMenuItem.Text = "结账";
             this.结账ToolStripMenuItem.Click += new System.EventHandler(this.结账ToolStripMenuItem_Click);
             // 
@@ -436,6 +447,35 @@
             this.lvDesk.TabIndex = 4;
             this.lvDesk.UseCompatibleStateImageBehavior = false;
             this.lvDesk.Click += new System.EventHandler(this.lvDesk_Click);
+            // 
+            // 预定ToolStripMenuItem
+            // 
+            this.预定ToolStripMenuItem.Name = "预定ToolStripMenuItem";
+            this.预定ToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.预定ToolStripMenuItem.Text = "预定";
+            this.预定ToolStripMenuItem.Click += new System.EventHandler(this.预定ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(124, 6);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(124, 6);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(124, 6);
+            // 
+            // 取消预订ToolStripMenuItem
+            // 
+            this.取消预订ToolStripMenuItem.Name = "取消预订ToolStripMenuItem";
+            this.取消预订ToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.取消预订ToolStripMenuItem.Text = "取消预定";
+            this.取消预订ToolStripMenuItem.Click += new System.EventHandler(this.取消预订ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -513,5 +553,10 @@
         private System.Windows.Forms.ToolStripMenuItem 消费记录toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem 菜品记录toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 预定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripMenuItem 取消预订ToolStripMenuItem;
     }
 }

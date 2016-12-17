@@ -168,6 +168,8 @@ namespace dx
                     }
                 }
             }
+            frmMain main = new frmMain();
+            
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
