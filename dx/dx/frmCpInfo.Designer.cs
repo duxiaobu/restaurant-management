@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtprice = new System.Windows.Forms.TextBox();
@@ -38,10 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +71,39 @@
             this.groupBox1.Size = new System.Drawing.Size(622, 205);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "汤锅类",
+            "爆炒类",
+            "素菜类",
+            "小吃类",
+            "-------",
+            "特色菜系列",
+            "荤菜系列",
+            "素菜系列",
+            "特色小吃",
+            "锅底",
+            "--------",
+            "酒",
+            "饮料"});
+            this.comboBox1.Location = new System.Drawing.Point(119, 48);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(143, 23);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(450, 169);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 29);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "删除菜品";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnModify
             // 
@@ -157,16 +190,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "菜品种类：";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(450, 169);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 29);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "删除菜品";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -198,26 +221,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(610, 260);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "汤锅类",
-            "爆炒类",
-            "素菜类",
-            "小吃类",
-            "-------",
-            "特色菜系列",
-            "荤菜系列",
-            "素菜系列",
-            "特色小吃",
-            "锅底"});
-            this.comboBox1.Location = new System.Drawing.Point(119, 48);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 23);
-            this.comboBox1.TabIndex = 11;
             // 
             // Column1
             // 

@@ -24,6 +24,7 @@ namespace dx
             this.Text = RName + "点/加菜";                      //设置窗体显示问题
             TreeNode newnode1 = tvFood.Nodes.Add("羊肉汤锅");       //为控件添加节点
             TreeNode newnode2 = tvFood.Nodes.Add("老火锅");
+            TreeNode newnode3 = tvFood.Nodes.Add("酒水");
             TreeNode newnode11 = newnode1.Nodes.Add("汤锅类");
             TreeNode newnode12 = newnode1.Nodes.Add("爆炒类");
             TreeNode newnode13 = newnode1.Nodes.Add("素菜类");
@@ -33,6 +34,9 @@ namespace dx
             TreeNode newnode23 = newnode2.Nodes.Add("素菜系列");
             TreeNode newnode24 = newnode2.Nodes.Add("特色小吃");
             TreeNode newnode25 = newnode2.Nodes.Add("锅底");
+            TreeNode newnode31 = newnode3.Nodes.Add("酒");
+            TreeNode newnode32 = newnode3.Nodes.Add("饮料");
+           
             MySqlConnection conn = BaseClass.DBConn.DxCon();    //连接数据库
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("select * from tb_food where foodty='汤锅类'",conn);
@@ -50,6 +54,7 @@ namespace dx
                 newnode12.Nodes.Add(msdr[3].ToString().Trim());    
             }
             msdr.Close();
+
             cmd = new MySqlCommand("select * from tb_food where foodty='素菜类'",conn);
             msdr = cmd.ExecuteReader();
             while (msdr.Read())
@@ -57,7 +62,70 @@ namespace dx
                 newnode13.Nodes.Add(msdr[3].ToString().Trim());
             }
             msdr.Close();
-            cmd = new MySqlCommand("select * from tb_food where foodty=小吃类''",conn);
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='小吃类'",conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode14.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='特色菜系列'",conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode21.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='荤菜系列'",conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode22.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='素菜系列'",conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode23.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='特色小吃'", conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode24.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='锅底'", conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode25.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='酒'", conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode31.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
+
+            cmd = new MySqlCommand("select * from tb_food where foodty='饮料'", conn);
+            msdr = cmd.ExecuteReader();
+            while (msdr.Read())
+            {
+                newnode32.Nodes.Add(msdr[3].ToString().Trim());
+            }
+            msdr.Close();
 
             cmd = new MySqlCommand("select WaiterName from tb_room where RoomName='" + RName + "'",conn);
             msdr = cmd.ExecuteReader();
@@ -65,7 +133,7 @@ namespace dx
             {
                 cbWaiter.Items.Add(msdr["WaiterName"].ToString().Trim());   //显示服务员的名字
             }
-            cbWaiter.SelectedIndex = 0;                   //显示第一个数据
+            cbWaiter.SelectedIndex = 0;                                     //显示第一个数据
             msdr.Close();
 
             cmd = new MySqlCommand("select RoomZT from tb_room where RoomName='"+RName+"'",conn);
