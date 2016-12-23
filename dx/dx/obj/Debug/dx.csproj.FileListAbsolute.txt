@@ -1,5 +1,4 @@
 E:\chuanhaozi\dx\dx\bin\Debug\dx.exe.config
-E:\chuanhaozi\dx\dx\obj\Debug\dx.csprojResolveAssemblyReference.cache
 E:\chuanhaozi\dx\dx\obj\Debug\dx.Form1.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmDC.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmLogin.resources
@@ -30,3 +29,4 @@ E:\chuanhaozi\dx\dx\obj\Debug\dx.frmXFJL.resources
 E:\chuanhaozi\dx\dx\obj\Debug\dx.frmCPJL.resources
 E:\chuanhaozi\dx\dx\obj\Debug\Interop.Office.dll
 E:\chuanhaozi\dx\dx\obj\Debug\dx.csproj.ResolveComReference.cache
+E:\chuanhaozi\dx\dx\obj\Debug\dx.csprojResolveAssemblyReference.cache
